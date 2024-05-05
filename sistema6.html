@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>  <!--se agrega un estilo a la etiqueta de body por el bdarkmode-->
+    <header>
+      <a href="#">Sistema 6</a>
+      <div>
+        <button id="bdark">cambio</button">  <!--bdark que nos ayuda a cambiar el modo del sitio-->
+      </div>
+
+    </header>
+
+    <main>
+    <section>
+        <div class="datos">
+        <h2> Titulo</h2>
+           <p>abril,2024 11min</p>
+        </div>
+           <p>
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Fusce 
+                 faucibus nisl eget tortor ultrices, eget hendrerit libero ultricies. Suspendisse potenti. 
+                 Nunc sed risus eu nibh tincidunt ultricies. Maecenas vitae sapien sit amet eros hendrerit 
+                 venenatis. Donec sed leo eget leo ultricies ultrices.
+           </p>
+        </section>
+    </mai>
+
+    <script>
+        const bdark = document.querySelector("#bdark");  
+        const body = document.querySelector("#body");    
+
+        load();
+
+        bdark.addEventListener("click", e =>{
+            body.classList.toggle("darkmode");
+            store(body.classList.contains("darkmode"));  
+        });
+
+        function load() {
+            const darkmode = localStorage.getItem("darkmode");
+
+            if(!darkmode){
+                store("false");
+            }else if(darkmode == "true"){
+                body.classList.add("darkmode");
+            }
+        }
+
+        function store(value){
+            localStorage.setItem("darkmode",value);
+        }
+
+    </script>
+</body>
+</html>
